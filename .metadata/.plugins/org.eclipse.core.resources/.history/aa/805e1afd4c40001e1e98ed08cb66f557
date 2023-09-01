@@ -1,0 +1,8 @@
+package com.jsp.AirLine.Service;
+
+import com.jsp.AirLine.DTO.FlightDTO;
+
+public interface AdminService {
+	int addFlights(FlightDTO flightDTO);
+
+}

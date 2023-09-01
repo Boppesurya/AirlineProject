@@ -1,0 +1,13 @@
+package com.jsp.AirLine.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.jsp.AirLine.Entity.User;
+
+public interface UserRepository extends JpaRepository<User, Integer>{
+	@Query("SELECT u FROM User"+"WHERE u.userName=: AND u.password =:")
+User findByuserNameAndPassword(@Param("userName")String userName,@Param("password")String password);
+	
+}

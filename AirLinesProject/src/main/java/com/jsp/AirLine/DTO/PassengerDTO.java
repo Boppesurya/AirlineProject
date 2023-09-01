@@ -1,0 +1,26 @@
+package com.jsp.AirLine.DTO;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+public class PassengerDTO {
+	
+	private String firstName;
+	private String lastName;
+	private String mobileNo;
+	private String gender;
+	
+	
+	private BookingInfoDTO bookingInfoDTO;
+	
+	private CheckinDTO checkinDTO;
+
+}

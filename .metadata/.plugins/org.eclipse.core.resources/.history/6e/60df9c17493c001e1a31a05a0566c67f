@@ -1,0 +1,5 @@
+package com.jsp.AirLine.Service;
+
+public class UserServiceImp implements UserService  {
+
+}

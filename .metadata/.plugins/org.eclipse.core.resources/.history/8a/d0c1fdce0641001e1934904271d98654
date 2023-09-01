@@ -1,0 +1,87 @@
+package com.jsp.AirLine.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jsp.AirLine.DTO.AirLine_Info_DTO;
+import com.jsp.AirLine.DTO.FareDTO;
+import com.jsp.AirLine.DTO.FlightDTO;
+import com.jsp.AirLine.DTO.Flight_Info_DTO;
+import com.jsp.AirLine.DTO.InventoryDTO;
+import com.jsp.AirLine.Service.AdminService;
+
+@RestController
+@RequestMapping("/admin")
+public class AdmineController {
+    @Autowired
+	private AdminService adminService;
+	private AdminService admitservice;
+    
+    @PostMapping("/addairline")
+	public ResponseEntity<String> addAirlineinfo(@RequestBody AirLine_Info_DTO airlinedto) {
+		System.out.println(airlinedto);
+		int airlineid =  adminService.addAirlineinfo(airlinedto);
+		return ResponseEntity.status(HttpStatus.CREATED).body("Airline id :" + airlineid);
+	}
+    
+    @PostMapping("/addflightinfo/{airlineid}")
+	public ResponseEntity<String> addFlightinfo(@RequestBody Flight_Info_DTO flightinfodto,
+			@PathVariable("airlineid") int airlineid) {
+		System.out.println(flightinfodto);
+		int flightinfnoid = adminService.addflightinfo(flightinfodto, airlineid);
+		return ResponseEntity.status(HttpStatus.CREATED).body("flightinfo id:" + flightinfnoid);
+	}
+    
+    @PostMapping("/fare")
+    public ResponseEntity<String> addfareData(@RequestBody FareDTO fareDTO){
+    	
+    	System.out.println(fareDTO);
+    	int fareId = adminService.addfair(fareDTO);
+    	return ResponseEntity.status(HttpStatus.CREATED).body("fare id is:" +fareId);
+    	
+    }
+    
+    @PostMapping("/inventatory")
+    public ResponseEntity<String> addInventatory(@RequestBody InventoryDTO inventoryDTO){
+    	System.out.println(inventoryDTO);
+    	int inventoryId = adminService.addinventatory(inventoryDTO);
+    	return ResponseEntity.status(HttpStatus.CREATED).body("inventoryId" +inventoryId);  	
+    }
+    
+    @PostMapping("/flight/{fareId}/{flightInfoId}/{inventoryId}")
+    public ResponseEntity<String> addflight(@RequestBody FlightDTO flightdto,@PathVariable(value="fareId")int fareId,@PathVariable(value = "flightInfoId") int flightInfoId,
+			@PathVariable(value = "inventoryId") int inventoryId){
+    	System.out.println(flightdto);
+    	int flightId= adminService.addflight(flightdto, fareId, flightInfoId, inventoryId);
+    	return ResponseEntity.status(HttpStatus.CREATED).body("flightId" +flightId);
+    	
+    }
+    
+    
+    @GetMapping("/getflightbyId/{flightId}")
+	public FlightDTO getflightbyid(@PathVariable("flightId") int flightId)
+	{
+		FlightDTO flightColumndto=admitservice.findFlightByid(flightId);
+		if(flightColumndto!=null)
+		{
+			return flightColumndto;
+		}
+		else
+		{
+			System.out.println("no records found");
+			return null;
+		}
+	}
+    
+    
+    
+    
+    
+}

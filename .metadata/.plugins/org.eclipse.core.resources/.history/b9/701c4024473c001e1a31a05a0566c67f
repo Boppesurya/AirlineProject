@@ -1,0 +1,11 @@
+package com.jsp.AirLine.DTO;
+
+public class UserDTO {
+
+	private String firstName;
+	private String lastName;
+	private String mobaileNo;
+	private String gender;
+	private String userName;
+	private String password;
+}

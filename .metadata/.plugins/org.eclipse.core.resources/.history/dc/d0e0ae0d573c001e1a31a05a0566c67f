@@ -1,0 +1,18 @@
+package com.jsp.AirLine.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jsp.AirLine.DTO.PassengerDTO;
+import com.jsp.AirLine.Repository.PassengerRepository;
+@Service
+public class PassengerServicImp implements PassengerService {
+  @Autowired
+	private PassengerRepository passengerRepository;
+	@Override
+	public int addPassenger(PassengerDTO passengerDTO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

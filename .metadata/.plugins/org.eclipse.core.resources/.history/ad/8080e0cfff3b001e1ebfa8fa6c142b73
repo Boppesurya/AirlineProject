@@ -1,0 +1,15 @@
+package com.jsp.AirLine.DTO;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class BookingInfoDTO {
+	private LocalDate bookingDate;
+	private String Destination;
+	private double cost;
+	private LocalDate flightDate1;
+	private int flightDate;
+	private String status;
+	private LocalTime flightTime;
+	private String currentCity;
+}

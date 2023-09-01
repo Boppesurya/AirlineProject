@@ -1,0 +1,9 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.GenerationType"/><rhs name\="org.springframework.http.HttpStatus"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="javax.persistence.GenerationType"/><rhs name\="org.springframework.http.HttpStatus"/></lhs><lhs name\="org.springframework.http.HttpEntity"><rhs name\="org.springframework.http.ResponseEntity"/></lhs><lhs name\="org.springframework.http.ResponseEntity"><rhs name\="org.springframework.http.ResponseEntity"/></lhs><lhs name\="com.jsp.AirLine.DTO.UserDTO"><rhs name\="com.jsp.AirLine.DTO.UserDTO"/></lhs><lhs name\="com.jsp.AirLine.Entity.BookingInformation"><rhs name\="com.jsp.AirLine.Entity.BookingInformation"/></lhs><lhs name\="com.jsp.AirLine.Entity.Checkin"><rhs name\="com.jsp.AirLine.Entity.Checkin"/></lhs><lhs name\="com.jsp.AirLine.Entity.User"><rhs name\="com.jsp.AirLine.Entity.User"/></lhs><lhs name\="com.jsp.AirLine.Entity.Fare"><rhs name\="com.jsp.AirLine.Entity.Fare"/></lhs><lhs name\="com.jsp.AirLine.Entity.AirlLineInformation"><rhs name\="com.jsp.AirLine.Entity.AirlLineInformation"/></lhs><lhs name\="com.jsp.AirLine.Entity.Inventory"><rhs name\="com.jsp.AirLine.Entity.Inventory"/></lhs><lhs name\="com.jsp.AirLine.Entity.Flight_Info"><rhs name\="com.jsp.AirLine.Entity.Flight_Info"/></lhs><lhs name\="com.jsp.AirLine.Entity.Flight"><rhs name\="com.jsp.AirLine.Entity.Flight"/></lhs><lhs name\="com.jsp.AirLine.DTO.FareDTO"><rhs name\="com.jsp.AirLine.DTO.FareDTO"/></lhs><lhs name\="com.jsp.AirLine.DTO.AirLine_Info_DTO"><rhs name\="com.jsp.AirLine.DTO.AirLine_Info_DTO"/></lhs></history>
+content_assist_number_of_computers=21
+eclipse.preferences.version=1
+markOccurrences=false
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

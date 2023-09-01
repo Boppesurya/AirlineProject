@@ -1,0 +1,45 @@
+package com.jsp.AirLine.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jsp.AirLine.DTO.FlightDTO;
+import com.jsp.AirLine.Entity.AirlLine_Info;
+import com.jsp.AirLine.Entity.Fare;
+import com.jsp.AirLine.Entity.Flight;
+import com.jsp.AirLine.Entity.Flight_Info;
+import com.jsp.AirLine.Entity.Inventory;
+import com.jsp.AirLine.Repository.FlightRepository;
+
+@Service
+public class AdmineServiceImp implements AdminService{
+   @Autowired
+	private FlightRepository flightRepository;
+
+@Override
+public int addFlights(FlightDTO flightDTO) {
+	Flight flight = flightRepository.save(Flight.builder()
+			     .currentLocation(flightDTO.getCurrentLocation())
+			     .distination(flightDTO.getDistination())
+			     .flightDate(flightDTO.getFlightDate())
+			     .flightNo(flightDTO.getFlightNo())
+			     .fare(Fare.builder()
+			    		.amount(flightDTO.getFareDTO().getAmount())
+			    		.currency(flightDTO.getFareDTO().getCurrency())
+			    		 .build())
+			     .flight_Info(Flight_Info.builder()
+			    	.flightNo(flightDTO.getFlight_Info_DTO().getFlightNo())
+			    	.type(flightDTO.getFlight_Info_DTO().getType())
+			    	.airlLine_Info(AirlLine_Info.builder()
+			    			.airLineName(flightDTO.getFlight_Info_DTO().getAirLine_Info_DTO().getAirlineName())
+			    			.build())
+			    	.build())
+			     .inventory(Inventory.builder()
+			    		 .count(flightDTO.getInventoryDTO().getCount())
+			      .build())
+			.build());
+	return flight.getFlightId();
+	
+}
+	
+}

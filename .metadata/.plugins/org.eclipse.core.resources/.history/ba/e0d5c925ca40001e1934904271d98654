@@ -1,0 +1,7 @@
+package com.jsp.AirLine.Service;
+
+import com.jsp.AirLine.DTO.PassengerDTO;
+
+public interface PassengerService {
+ int addPassenger(PassengerDTO passengerDTO);
+}

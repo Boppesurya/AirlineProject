@@ -1,0 +1,14 @@
+package com.jsp.AirLine.Entity;
+
+public class User {
+
+	private int Id;
+	private String firstName;
+	private String lastName;
+	private String mobaileNo;
+	private String gender;
+	private String userName;
+	private String password;
+	
+	
+}

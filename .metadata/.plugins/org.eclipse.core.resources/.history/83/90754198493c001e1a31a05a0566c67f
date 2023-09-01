@@ -1,0 +1,22 @@
+package com.jsp.AirLine.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jsp.AirLine.DTO.UserDTO;
+import com.jsp.AirLine.Entity.User;
+import com.jsp.AirLine.Repository.UserRepository;
+@Service
+public class UserServiceImp implements UserService  {
+    
+	@Autowired
+	private UserRepository userRepository;
+	@Override
+	public int addUser(UserDTO userDTO) {
+		User userInfo = userRepository.save(User.builder()
+				.build());
+		System.out.println(userDTO);
+		return userInfo.getId();
+	}
+
+}

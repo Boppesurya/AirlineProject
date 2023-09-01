@@ -1,0 +1,5 @@
+package com.jsp.AirLine.Entity;
+
+public class User {
+
+}

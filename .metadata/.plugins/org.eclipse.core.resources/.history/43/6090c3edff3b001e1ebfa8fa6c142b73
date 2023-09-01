@@ -1,0 +1,32 @@
+package com.jsp.AirLine.DTO;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+
+import com.jsp.AirLine.Entity.BookingInformation;
+import com.jsp.AirLine.Entity.Passenger;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Builder
+public class BookingInfoDTO {
+	private LocalDate bookingDate;
+	private String Destination;
+	private double cost;
+	private LocalDate flightDate1;
+	private int flightDate;
+	private String status;
+	private LocalTime flightTime;
+	private String currentCity;
+}

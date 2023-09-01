@@ -1,0 +1,105 @@
+package com.jsp.AirLine.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jsp.AirLine.DTO.AirLine_Info_DTO;
+import com.jsp.AirLine.DTO.FareDTO;
+import com.jsp.AirLine.DTO.FlightDTO;
+import com.jsp.AirLine.DTO.Flight_Info_DTO;
+import com.jsp.AirLine.DTO.InventoryDTO;
+import com.jsp.AirLine.Entity.AirlLine_Info;
+import com.jsp.AirLine.Entity.Fare;
+import com.jsp.AirLine.Entity.Flight;
+import com.jsp.AirLine.Repository.AirLineInfoRepository;
+import com.jsp.AirLine.Repository.FareRepository;
+
+@Service
+public class AdmineServiceImp implements AdminService{
+  
+	@Autowired
+private AirLineInfoRepository airLineInfoRepo;
+@Override
+public int addAirlineinfo(AirLine_Info_DTO airlinedto) {
+	AirlLine_Info airlLine_Info = airLineInfoRepo.save(AirlLine_Info.builder()
+			.airLineName(airlinedto.getAirlineName())
+			.build());
+			
+	return airlLine_Info.getAirLineId();
+}
+
+@Autowired
+private FareRepository fareRepository;
+@Override
+public int addfair(FareDTO fairdto) {
+	Fare fare =fareRepository.save(Fare.builder()
+			.currency(fairdto.getCurrency())
+			.amount(fairdto.getAmount())
+			.build());
+	return fare.getFareId();
+}
+
+@Override
+public int addinventatory(InventoryDTO inventatorydto) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int addflightinfo(Flight_Info_DTO flightinfodto, int airlineid) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int addflight(FlightDTO flightColumndto, int fairid, int flightinfoid, int inventatoryid) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public FlightDTO findFlightByid(int flightid) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public AirLine_Info_DTO findAirlineByid(int airlineid) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public AirLine_Info_DTO updateAirlineNameByid(int airlineid, String airlinename) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public FlightDTO updateFlightNameByid(int flighid, int flightno) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public int deleteFlights(int flightid) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int deleteAirline(int airlineid) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public List<Flight> searchFlight(String currentLoc, String destination, String flightdate, String flighttime) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+	
+}
